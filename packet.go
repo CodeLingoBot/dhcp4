@@ -143,7 +143,7 @@ func (p *Packet) AddOption(o OptionCode, value []byte) {
 	*p = append(*p, byte(End))                                          // Add on new End
 }
 
-// Removes all options from packet.
+// StripOptions removes all options from packet.
 func (p *Packet) StripOptions() {
 	*p = append((*p)[:240], byte(End))
 }
